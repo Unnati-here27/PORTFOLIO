@@ -1,14 +1,444 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>unnati-data analytics</title>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EXECUTIVE_FOLIO | Creative Professional Portfolio</title>
+<meta content="A professional portfolio for high-end digital experiences and creative precision." name="description"/>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config Injection -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-tertiary": "#ffffff",
+                "secondary-container": "#e5e2e1",
+                "tertiary": "#4e5051",
+                "on-background": "#1b1c1c",
+                "primary-fixed": "#dce1ff",
+                "surface": "#fbf9f8",
+                "on-tertiary-fixed": "#191c1d",
+                "surface-container-lowest": "#ffffff",
+                "on-error": "#ffffff",
+                "secondary-fixed-dim": "#c8c6c5",
+                "inverse-primary": "#b6c4ff",
+                "inverse-surface": "#303031",
+                "error-container": "#ffdad6",
+                "on-surface-variant": "#434656",
+                "primary": "#0041c8",
+                "surface-variant": "#e4e2e2",
+                "tertiary-fixed": "#e1e3e4",
+                "inverse-on-surface": "#f2f0f0",
+                "primary-fixed-dim": "#b6c4ff",
+                "outline-variant": "#c3c5d9",
+                "secondary-fixed": "#e5e2e1",
+                "on-primary-fixed": "#001551",
+                "on-tertiary-fixed-variant": "#454748",
+                "surface-dim": "#dbdad9",
+                "on-error-container": "#93000a",
+                "surface-container-highest": "#e4e2e2",
+                "secondary": "#5f5e5e",
+                "on-surface": "#1b1c1c",
+                "surface-container-high": "#e9e8e7",
+                "surface-container": "#efeded",
+                "on-secondary-container": "#656464",
+                "on-tertiary-container": "#e6e8e9",
+                "tertiary-container": "#666869",
+                "tertiary-fixed-dim": "#c5c7c8",
+                "primary-container": "#0055ff",
+                "on-primary-container": "#e3e6ff",
+                "error": "#ba1a1a",
+                "on-secondary-fixed": "#1c1b1b",
+                "surface-tint": "#004dea",
+                "on-primary-fixed-variant": "#0039b3",
+                "surface-container-low": "#f5f3f3",
+                "on-secondary-fixed-variant": "#474646",
+                "outline": "#737688",
+                "background": "#fbf9f8",
+                "on-primary": "#ffffff",
+                "surface-bright": "#fbf9f8",
+                "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "stack-lg": "24px",
+                "container-max": "1280px",
+                "margin-mobile": "24px",
+                "gutter": "32px",
+                "margin-desktop": "64px",
+                "stack-sm": "8px",
+                "stack-md": "16px",
+                "section-gap": "128px"
+            },
+            "fontFamily": {
+                "body-md": ["Inter"],
+                "label-md": ["Inter"],
+                "headline-md": ["Plus Jakarta Sans"],
+                "body-lg": ["Inter"],
+                "headline-lg": ["Plus Jakarta Sans"],
+                "display-lg": ["Plus Jakarta Sans"],
+                "display-lg-mobile": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "display-lg-mobile": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .input-border-bottom {
+            border-bottom: 2px solid #737688;
+            transition: all 0.3s ease;
+        }
+        .input-border-bottom:focus {
+            border-color: #0041c8;
+            outline: none;
+        }
+
+        /* Ambient Shadows */
+        .ambient-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0, 65, 200, 0.08);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
 </head>
-<body>
-    this is my first portfolio website
-    <br><a href="https://techiguru.in/">visit our website</a>
-    <!-- add image in webpage -->
-     <img src="https://images.pexels.com/photos/5677060/pexels-photo-5677060.jpeg" width="500" height="600" align="center">
-</body>
-</html>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-md max-w-container-max mx-auto">
+<div class="flex items-center gap-stack-sm">
+<span class="material-symbols-outlined text-primary" data-icon="grid_view">grid_view</span>
+<span class="text-headline-md font-headline-md text-on-background tracking-tighter">EXECUTIVE_FOLIO</span>
+</div>
+<div class="hidden md:flex items-center gap-stack-lg text-label-md font-label-md uppercase">
+<a class="text-secondary hover:text-primary transition-colors text-primary border-b-2 border-primary pb-1" href="#work">Work</a>
+<a class="text-secondary hover:text-primary transition-colors" href="#services">Services</a>
+<a class="text-secondary hover:text-primary transition-colors" href="#about">About</a>
+<a class="px-6 py-2 bg-on-background text-on-primary hover:bg-primary transition-all duration-300 rounded-lg" href="#contact">Contact</a>
+</div>
+<button aria-label="Menu" class="md:hidden text-on-background">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-24 overflow-hidden px-margin-mobile md:px-margin-desktop">
+<div class="absolute inset-0 z-0 opacity-40">
+
+</div>
+<div class="max-w-container-max mx-auto w-full relative z-10 grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 lg:col-span-7">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-stack-md">
+                        Digital Experiences Crafted with <span class="text-primary">Precision</span>.
+                    </h1>
+<p class="text-body-lg font-body-lg text-secondary max-w-xl mb-stack-lg">
+                        Strategic design and engineering for high-performance brands. We transform complex problems into seamless human interactions.
+                    </p>
+<div class="flex flex-wrap gap-stack-md">
+<a class="px-8 py-4 bg-on-background text-on-primary hover:bg-primary transition-all duration-300 rounded-lg font-label-md uppercase tracking-wider active:scale-95" href="#work">
+                            View Work
+                        </a>
+<a class="px-8 py-4 border border-on-background text-on-background hover:bg-surface-container-high transition-all duration-300 rounded-lg font-label-md uppercase tracking-wider active:scale-95" href="#contact">
+                            Collaborate
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="about">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-section-gap items-center">
+<div class="md:col-span-5 relative">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden rounded-xl ambient-shadow">
+<img class="w-full h-full object-cover" data-alt="A professional, high-end portrait of a creative director in a minimalist studio. The lighting is soft and cinematic, with deep shadows and clean highlights typical of an executive aesthetic. The background is a clean neutral grey, emphasizing a sophisticated and confident professional persona. The overall mood is focused and authoritative." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7rYrz22cILwlZwjUL9iHPy-wJ-6A2SjHSdLyH_9kXwWLpMEp3NLYILWtGsr0dZoLfRdQD_mF43mV6Sz3WpGTZZz-VjArqTrYBf6DKUxsZRgMT0xJSDvUb2rCIOLX_wQ-Pc4IC-Rz7CLv--kaMGeTFyn_nnNAdSeeEchjPGw3Ix4C22doQNRFUh5Er_ReRCJF8EK2iQY-CW-DEgDUVULLZwUtdvkdCAof82SxNgMCQE2YayKZQyr5prQ"/>
+</div>
+<div class="absolute -bottom-8 -right-8 w-48 h-48 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+</div>
+<div class="md:col-span-7">
+<h2 class="text-label-md font-label-md text-primary uppercase tracking-[0.2em] mb-stack-sm">Vision &amp; Craft</h2>
+<h3 class="text-headline-lg font-headline-lg text-on-background mb-stack-md">Weaving Technical Skill with Creative Vision.</h3>
+<div class="space-y-stack-md text-body-lg font-body-lg text-secondary">
+<p>
+                            I am a multi-disciplinary designer and developer focused on creating digital systems that balance aesthetic luxury with functional rigor. With over a decade of experience, I've helped startups and Fortune 500 companies alike redefine their digital presence.
+                        </p>
+<p>
+                            My philosophy is rooted in "Essentialism"—stripping away the unnecessary to reveal the core value of a product. Every pixel, every interaction, and every line of code serves a strategic purpose.
+                        </p>
+</div>
+<div class="mt-stack-lg grid grid-cols-2 gap-stack-lg border-t border-outline-variant pt-stack-lg">
+<div>
+<span class="block text-headline-md font-headline-md text-on-background">12+</span>
+<span class="text-label-md font-label-md text-secondary uppercase">Years Experience</span>
+</div>
+<div>
+<span class="block text-headline-md font-headline-md text-on-background">150+</span>
+<span class="text-label-md font-label-md text-secondary uppercase">Projects Delivered</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Projects (Bento Grid) -->
+<section class="py-section-gap bg-surface-container-lowest" id="work">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-section-gap">
+<div>
+<h2 class="text-label-md font-label-md text-primary uppercase tracking-[0.2em] mb-stack-sm">Selected Work</h2>
+<h3 class="text-headline-lg font-headline-lg text-on-background">Portfolio Highlights</h3>
+</div>
+<a class="hidden md:flex items-center gap-2 text-label-md font-label-md text-on-background hover:text-primary transition-colors group" href="#">
+                        See All Projects <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Project 1 -->
+<div class="md:col-span-8 group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl bg-surface-variant aspect-video md:aspect-[16/9] ambient-shadow">
+<img class="project-image w-full h-full object-cover transition-transform duration-700" data-alt="A premium fintech mobile application interface shown on a high-end smartphone. The design features clean typography, a sophisticated dark mode palette with vibrant blue accents, and elegant data visualizations. The lighting is clean and sharp, highlighting the crisp UI elements. The background is a minimalist, airy workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7o8291NecnpfvoE8isxneUju9RwZLvW3TavFkOgIyDSVZwJL8cEi7CpUYCVdg3_uwP-bGuQqjvJybh6qOiMALfwOkm-Df4aNXA1l3Il5IqqIYaj-qq0Oknv7vL48NtgCNcQqjFRQxVRunXsU54fA3vAJXkrfN67PhxHc5viS8F9JzLM0ed4h2uO2FlW2VCqsmpRpkZWhE1eKhe4tOgkmBvMoCtYLIIquftyqqmiUMhsFFUs1oA0GGGg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-stack-lg">
+<div class="text-on-primary">
+<p class="text-label-md font-label-md uppercase mb-stack-sm">Fintech • UI/UX</p>
+<h4 class="text-headline-md font-headline-md">Lumina Wealth App</h4>
+</div>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl bg-surface-variant h-full aspect-square md:aspect-auto ambient-shadow">
+<img class="project-image w-full h-full object-cover transition-transform duration-700" data-alt="A modern brand identity system for a luxury architectural firm. Business cards, stationary, and a digital interface are displayed in a clean, isometric composition. The color palette consists of deep charcoal and off-white. The lighting is soft and natural, emphasizing the texture of the materials and the precision of the typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEhsTIQv51mXkC-tkUvcrcJrccY3FhfNSYHjeYfHZfy5bgBztpflWErzZTjURV0yBSLaFQVN-Ew-4SZ0tgfaWGzUYoL3crz4k7PS_YQ_tsnbdzZYOEUGoEJVN66osLm9jXg6WKb0W1By6DgrtND-EGqOJq40jMu_JD-VjseE9pqhQvTvf3mJ2ve8e5D0rfHC5nKBlFd6Joou92GsIubwU8Y2-JnUpUNQ5GvgVgp0Hu2HRa2Gn-h-L5Vw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-stack-lg">
+<div class="text-on-primary">
+<p class="text-label-md font-label-md uppercase mb-stack-sm">Branding</p>
+<h4 class="text-headline-md font-headline-md">Architex Identity</h4>
+</div>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl bg-surface-variant aspect-square ambient-shadow">
+<img class="project-image w-full h-full object-cover transition-transform duration-700" data-alt="A minimalist e-commerce website for high-end sustainable fashion. The layout is clean and spacious with large, high-quality photography of natural fabrics. The typography is a sophisticated serif combined with a modern sans-serif. The color scheme is earthy and muted. Lighting is soft and warm, creating a luxurious yet approachable feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTwUxkRSobvyBRxGkoabqOjENA7BVwgX67RZwlOarYohyV-YEJLfwsISC3r6pgXPphmdKK7fkrBo9DaRxdPxLSApvAuHvjm3NuKoCr-7EKcdhy1kE0PG-8TJlpIWFilIKlWJdCmNXZhRKl14U2d43haiUXWQFQ_BSTiE4v8drenhgOaU4D9xQ-u0V9pJb8eyM2K97RImX-z4GjmW8Q4YfSRdyl519lIUZgFRu452-boB_UdVG5CnwBGw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-stack-lg">
+<div class="text-on-primary">
+<p class="text-label-md font-label-md uppercase mb-stack-sm">E-Commerce</p>
+<h4 class="text-headline-md font-headline-md">Ethos Studio</h4>
+</div>
+</div>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="md:col-span-8 group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl bg-surface-variant aspect-video md:aspect-[16/7] ambient-shadow">
+<img class="project-image w-full h-full object-cover transition-transform duration-700" data-alt="A sleek SaaS dashboard interface for data analytics. The UI features complex charts and graphs rendered in a clean, modern aesthetic with a primary blue color palette. The layout is organized into a modular bento grid style. The overall feel is one of power, precision, and executive-level clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpGuFbxjvdcHN8NlyDjT3Pmmp68zPRdChGQsj1SWfqnR_q-qp4Blc2vpH21LOGPm8tvyf-q7Ia51OgxHyWa7AH71g1-NrzouXh-wNGjE_eEJhsNrwErXza8LVXkBugT8pcUe0xq0m_oXxd6K00WN11avZRvdDd-xFqdqrvao7lRNgzJrUyEW6JuUpNN_jVRSodvy25-b-o43868X-vh4_nS287pNrpC5RRx1P8MzDVCzy6IVRIUKw0Nw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-stack-lg">
+<div class="text-on-primary">
+<p class="text-label-md font-label-md uppercase mb-stack-sm">SaaS • Dashboard</p>
+<h4 class="text-headline-md font-headline-md">Nexus Analytics</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="services">
+<div class="text-center mb-section-gap">
+<h2 class="text-label-md font-label-md text-primary uppercase tracking-[0.2em] mb-stack-sm">Expertise</h2>
+<h3 class="text-headline-lg font-headline-lg text-on-background">Core Offerings</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="p-stack-lg hover:bg-surface-container-high transition-all duration-300 rounded-xl group border border-outline-variant hover:border-transparent">
+<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-stack-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="design_services">design_services</span>
+</div>
+<h4 class="text-headline-md font-headline-md text-on-background mb-stack-sm">UI/UX Design</h4>
+<p class="text-body-md font-body-md text-secondary">
+                        Creating intuitive, human-centered interfaces that convert. Specialized in high-end design systems and complex product ecosystems.
+                    </p>
+<ul class="mt-stack-md space-y-2 text-label-md font-label-md text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="check">check</span> User Research</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="check">check</span> Wireframing</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="check">check</span> Prototyping</li>
+</ul>
+</div>
+<div class="p-stack-lg hover:bg-surface-container-high transition-all duration-300 rounded-xl group border border-outline-variant hover:border-transparent">
+<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-stack-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="code">code</span>
+</div>
+<h4 class="text-headline-md font-headline-md text-on-background mb-stack-sm">Frontend Engineering</h4>
+<p class="text-body-md font-body-md text-secondary">
+                        Bringing designs to life with clean, performant, and accessible code. Expert in modern frameworks and creative interactions.
+                    </p>
+<ul class="mt-stack-md space-y-2 text-label-md font-label-md text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="check">check</span> React / Next.js</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="check">check</span> Tailwind CSS</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="check">check</span> Animation Systems</li>
+</ul>
+</div>
+<div class="p-stack-lg hover:bg-surface-container-high transition-all duration-300 rounded-xl group border border-outline-variant hover:border-transparent">
+<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-stack-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h4 class="text-headline-md font-headline-md text-on-background mb-stack-sm">Brand Strategy</h4>
+<p class="text-body-md font-body-md text-secondary">
+                        Defining the visual and verbal soul of your brand. Creating cohesive identities that resonate with high-value audiences.
+                    </p>
+<ul class="mt-stack-md space-y-2 text-label-md font-label-md text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="check">check</span> Visual Identity</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="check">check</span> Positioning</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="check">check</span> Style Guides</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-on-background text-on-primary" id="contact">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-section-gap">
+<div class="md:col-span-5">
+<h2 class="text-label-md font-label-md text-primary-fixed uppercase tracking-[0.2em] mb-stack-sm">Let's Connect</h2>
+<h3 class="text-headline-lg font-headline-lg mb-stack-md">Ready to start your next masterpiece?</h3>
+<p class="text-body-lg font-body-lg text-primary-fixed/80 mb-stack-lg">
+                        I am currently accepting select new projects and collaborations for 2024. Reach out and let's discuss your vision.
+                    </p>
+<div class="space-y-stack-md">
+<a class="flex items-center gap-stack-md group" href="mailto:hello@executivefolio.com">
+<span class="w-12 h-12 rounded-full border border-primary-fixed/30 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</span>
+<span class="text-body-lg font-body-lg">hello@executivefolio.com</span>
+</a>
+<div class="flex items-center gap-stack-md group">
+<span class="w-12 h-12 rounded-full border border-primary-fixed/30 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</span>
+<span class="text-body-lg font-body-lg">Global / Remote</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-7">
+<form class="space-y-stack-lg bg-surface-container-highest/10 p-stack-lg md:p-12 rounded-2xl border border-primary-fixed/10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg">
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md uppercase text-primary-fixed/60">Full Name</label>
+<input class="bg-transparent border-b-2 border-primary-fixed/20 focus:border-primary py-2 text-on-primary placeholder:text-primary-fixed/30 outline-none transition-colors" placeholder="Jane Doe" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md uppercase text-primary-fixed/60">Email Address</label>
+<input class="bg-transparent border-b-2 border-primary-fixed/20 focus:border-primary py-2 text-on-primary placeholder:text-primary-fixed/30 outline-none transition-colors" placeholder="jane@example.com" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md uppercase text-primary-fixed/60">Subject</label>
+<input class="bg-transparent border-b-2 border-primary-fixed/20 focus:border-primary py-2 text-on-primary placeholder:text-primary-fixed/30 outline-none transition-colors" placeholder="Project Inquiry" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md uppercase text-primary-fixed/60">Message</label>
+<textarea class="bg-transparent border-b-2 border-primary-fixed/20 focus:border-primary py-2 text-on-primary placeholder:text-primary-fixed/30 outline-none transition-colors resize-none" placeholder="Tell me about your vision..." rows="4"></textarea>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary rounded-lg font-label-md uppercase tracking-widest hover:bg-primary-container transition-all active:scale-95" type="submit">
+                            Send Inquiry
+                        </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap border-t border-outline-variant bg-surface-container-lowest">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto gap-stack-lg">
+<div class="flex flex-col items-center md:items-start gap-stack-sm">
+<span class="text-label-md font-label-md font-bold text-on-background">EXECUTIVE_FOLIO</span>
+<p class="text-body-md font-body-md text-secondary">© 2024 Executive Folio. All rights reserved.</p>
+</div>
+<div class="flex gap-stack-lg">
+<a class="text-secondary hover:text-primary underline-offset-4 hover:underline transition-all duration-200" href="#work">Work</a>
+<a class="text-secondary hover:text-primary underline-offset-4 hover:underline transition-all duration-200" href="#services">Services</a>
+<a class="text-secondary hover:text-primary underline-offset-4 hover:underline transition-all duration-200" href="#about">About</a>
+<a class="text-secondary hover:text-primary underline-offset-4 hover:underline transition-all duration-200" href="#">Privacy</a>
+</div>
+<div class="flex gap-stack-md">
+<a class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="alternate_email">alternate_email</span>
+</a>
+</div>
+</div>
+</footer>
+<script>
+        // Smooth scroll reveal observer
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-8');
+            observer.observe(section);
+        });
+
+        // Header scroll behavior
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md', 'py-2');
+                header.classList.remove('py-stack-md');
+            } else {
+                header.classList.remove('shadow-md', 'py-2');
+                header.classList.add('py-stack-md');
+            }
+        });
+    </script>
+</body></html>
